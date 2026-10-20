@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: issuehub-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: AUTH_COOKIE_SAME_SITE
+        value: none
+      - key: MONGO_URI
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: IMAGEKIT_PRIVATE_KEY
+        sync: false
+      - key: ADMIN_SIGNUP_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true

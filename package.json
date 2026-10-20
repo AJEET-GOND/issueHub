@@ -1,0 +1,16 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "frontend": "npm run dev --prefix frontend",
+    "backend": "npm run dev --prefix backend",
+    "build": "npm run build --prefix frontend",
+    "lint": "npm run lint --prefix frontend",
+    "seed-admin": "npm run seed-admin --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
